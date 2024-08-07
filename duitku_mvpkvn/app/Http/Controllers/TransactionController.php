@@ -21,23 +21,18 @@ class TransactionController extends Controller
         return $invoiceId;
     }
 
-    public function showPaymentMenu($id)
+    public function showPaymentMenu(Request $request)
     {
-        $transaction = Ms_Transaction::findOrFail($id);
+        // $totalAmount = $request->query('totalAmount');
 
-        return view('transactions.pay', [
-            'transactionId' => $transaction->id,
-            'paymentMethod' => $transaction->dt_trc_payment,
-            'description' => $transaction->dt_trc_description,
-            'amount' => $transaction->dt_trc_amount,
-            'trf_amount' => $transaction->dt_trc_transfer_amount,
-        ]);
+        // return view('pos_system.transactions.pay', ['totalAmount' => $totalAmount]);
+        return view('pos_system.transactions.pay');
     }
 
     public function index()
     {
         $transactions = Ms_Transaction::all();
-        return view('transactions.index', compact('transactions'));
+        return view('pos_system.transactions.index', compact('transactions'));
     }
 
     public function create()

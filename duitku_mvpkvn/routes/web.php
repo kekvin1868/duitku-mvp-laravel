@@ -10,4 +10,4 @@ Route::get('/', function () {
 Route::resource('transactions', TransactionController::class);
 
 // Payment
-Route::get('/pay/{id}', [TransactionController::class, 'showPaymentMenu'])->name('transactions.pay');
+Route::get('/pay', [TransactionController::class, 'showPaymentMenu'])->name('pos_system.transactions.pay');
