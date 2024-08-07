@@ -29,7 +29,7 @@
                 <td>{{ $transaction->dt_trc_invoice_id }}</td>
                 <td>{{ $transaction->created_at }}</td>
                 <td>
-                    <a href="{{ route('transactions.edit', $transaction) }}">Pay</a>
+                    <a href="{{ route('transactions.pay', $transaction) }}">Pay</a>
                     <form action="{{ route('transactions.destroy', $transaction) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
